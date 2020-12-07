@@ -60,3 +60,20 @@ Based on the reconstruction training loss (MSE) of the model after during traini
 
 Above are some examples of images from the test set and their reconstructed versions. The first example is a dog image, the VAE reconstruction looks similar to the original image although it appears blurry. It is common for VAEs to generate somewhat blurry images. The reconstructed image still resembles a dog. The second example is an image of a tiger. It is more difficult to tell that the reconstructed image is a tiger. The VAE is attempting to reconstruct a dog image based on the tiger input. Because of this the reconstruction loss is higher. 
 
+<p align="center">
+  <img src="https://github.com/JoshuaMathew/VAE-Image-Classification/blob/main/images/results.jpg">
+</p>
+
+Above are the classification results of the model on the testing set. All images with reconstruction loss below the green threshold line were classified as dogs. The majority of the images below the threshold were ineed dogs. However, there were a good amount of non-dog images which were misclassified resulting in a false positive rate of 19.8%. This is likely because many of the other animals like foxes, cats, wolves, etc. look ver similar to a dog. The overall model accuracy was 85.5% and the false negative rate was 9.2%.
+
+## Baseline comparison
+
+<p align="center">
+  <img src="https://github.com/JoshuaMathew/VAE-Image-Classification/blob/main/images/cnn.jpg">
+</p>
+
+A convolutional neural network was trained on the same dataset to act as a baseline for comparison. The CNN achieved an overall classifcation accuracy of 90%.
+
+## Conclusion
+
+This project demonstrates that a VAE can be utilized as comparable alternative for image classification when compared to other mainstream methods such as a CNN. In certain cases VAEs also have the added benefit of only requiring images from 1 class for training.
